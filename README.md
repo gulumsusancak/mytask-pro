@@ -1,24 +1,26 @@
-# mytask-pro
+# MyTasks-Pro
 
-## Project setup
-```
+Een takenplanner app gebouwd met Vue 3 voor het beheren van taken met categorieën en prioriteiten.
+
+## Features
+
+- Taken toevoegen, bewerken en verwijderen
+- Categorieën en prioriteiten
+- Filteren en sorteren
+- Responsive design
+
+## Tech Stack
+
+- Vue 3 (Composition API)
+- Pinia (State Management)
+- Vue Router
+- Tailwind CSS
+- LocalStorage
+
+## Installatie
+
+```bash
+git clone https://github.com/gulumsusancak/mytask-pro.git
+cd mytask-pro
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
