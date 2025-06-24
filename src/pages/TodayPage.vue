@@ -1,4 +1,3 @@
-<!--todayPage.vue-->
 <template>
   <div class="w-full p-4">
     <h1 class="text-2xl font-bold mb-4">Vandaag</h1>

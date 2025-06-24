@@ -56,7 +56,7 @@ import { computed } from 'vue'
 import { useTasks } from '@/composables/useTasks'
 import TaskModal from '@/components/TaskModal.vue'
 
-// ✅ Alle task functionaliteit uit composable
+//alle task functionaliteit uit composable
 const {
   tasks,
   showModal,

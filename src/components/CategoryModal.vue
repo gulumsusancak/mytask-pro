@@ -1,4 +1,3 @@
-<!--tweede component categorymodal.vue-->
 <template>
 
 <div v-if="showCategoryModal" class="fixed inset-0 bg-black bg-opacity-50 z-30 flex items-center justify-center">
@@ -36,7 +35,7 @@
 import {computed, ref} from 'vue'
 import { useTaskStore } from '@/stores/taskStore'
 
-// Store - gebruik EXACTE dezelfde methode als in App.vue
+// store exact zelfde als app.vue
 const store = useTaskStore()
 console.log('CategoryModal - store:', store)
 console.log('CategoryModal - showCategoryModal:', store.showCategoryModal)
@@ -45,7 +44,6 @@ const showCategoryModal = computed(()=> store.showCategoryModal);
 const addCategory = store.addCategory
 const closeCategoryModal = store.closeCategoryModal
 
-// Local state voor input
 const categoryName = ref('')
 
 // Handle cancel

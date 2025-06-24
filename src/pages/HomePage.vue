@@ -1,4 +1,3 @@
-<!--homePage.vue-->
 <template>
   <div class="w-full p-4">
     <!-- Header met titel en knop -->

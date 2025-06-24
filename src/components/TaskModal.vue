@@ -1,4 +1,3 @@
-<!--eerste component taskmodal.vue-->
 <template>
   <div v-if="isOpen" class="fixed inset-0 bg-black bg-opacity-50 z-30 flex items-center justify-center">
     <div class="bg-white rounded-lg p-6 w-96 max-w-full mx-4">
@@ -85,7 +84,7 @@
 import { reactive, watch } from 'vue'
 import { useTaskStore } from '@/stores/taskStore'
 
-// Props - voeg editingTask toe
+// props
 const props = defineProps({
   isOpen: {
     type: Boolean,
@@ -101,11 +100,11 @@ const props = defineProps({
   }
 })
 
-// Emits
+
 const emit = defineEmits(['close', 'task-added'])
 /* eslint-enable no-undef */
 
-// Store - voeg updateTask toe
+// store
 const { categories, addTask, updateTask } = useTaskStore()
 
 // Task form data
@@ -117,7 +116,7 @@ const task = reactive({
   category: ''
 })
 
-// Watch for editingTask changes - vul formulier met bestaande data
+// watch for editingTask changes: vul formulier met bestaande data
 watch(() => props.editingTask, (editingTask) => {
   if (editingTask) {
     // Bewerken: vul formulier met bestaande taak data
@@ -132,14 +131,14 @@ watch(() => props.editingTask, (editingTask) => {
   }
 }, { immediate: true })
 
-// Watch for defaultCategory changes (voor nieuwe taken)
+// watch for defaultCategory changes (voor nieuwe taken)
 watch(() => props.defaultCategory, (newCategory) => {
   if (!props.editingTask && newCategory) {
     task.category = newCategory
   }
 })
 
-// Reset form
+// reset form
 const resetForm = () => {
   task.title = ''
   task.description = ''
@@ -148,20 +147,20 @@ const resetForm = () => {
   task.category = props.defaultCategory || ''
 }
 
-// Handle cancel
+// handle cancel
 const handleCancel = () => {
   resetForm()
   emit('close')
 }
 
-// Handle add/update - AANGEPAST: geen datum conversie meer
+// handle add/update
 const handleAdd = () => {
   if (task.title.trim()) {
     if (props.editingTask) {
       updateTask(props.editingTask.id, {
         title: task.title,
         description: task.description,
-        deadline: task.deadline,  // Direct zonder conversie
+        deadline: task.deadline,
         priority: task.priority,
         category: task.category || null
       })
@@ -169,7 +168,7 @@ const handleAdd = () => {
       addTask({
         title: task.title,
         description: task.description,
-        deadline: task.deadline,  // Direct zonder conversie
+        deadline: task.deadline,
         priority: task.priority,
         category: task.category || null
       })

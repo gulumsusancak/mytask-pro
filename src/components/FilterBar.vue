@@ -26,7 +26,7 @@
       </select>
     </div>
 
-    <!-- Sorteer opties - alleen tonen als showSortByDeadline true is -->
+    <!-- sorteer opties - alleen tonen als showSortByDeadline true is -->
     <div v-if="showSortByDeadline" class="mt-4">
       <label class="flex items-center">
         <input

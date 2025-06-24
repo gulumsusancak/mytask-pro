@@ -6,11 +6,10 @@ export function useTasks() {
     const store = useTaskStore()
     const { tasks, toggleTaskCompleted, deleteTask } = store
 
-    // Modal state
     const showModal = ref(false)
     const editingTask = ref(null)
 
-    // Modal functies
+    // modal functies
     const editTask = (task) => {
         editingTask.value = task
         showModal.value = true
