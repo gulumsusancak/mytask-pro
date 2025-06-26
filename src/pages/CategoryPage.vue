@@ -35,7 +35,7 @@
               </h3>
               <p class="text-gray-600 text-sm capitalize">{{ task.description }}</p>
               <p class="text-xs text-gray-500">
-                Deadline: {{ task.deadline.replace('T', ' ') }}
+                Deadline: {{ task.deadline.replace('T', ' ') || 'Geen' }}
               </p>
             </div>
 
